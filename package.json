@@ -4,7 +4,8 @@
   "scripts": {
     "start": "node server.js",
     "clean": "rm -fr ./build",
-    "build": "npm run clean && webpack --config webpack.prod.config.js"
+    "copy-files": "cp index.html build/",
+    "build": "npm run clean && webpack --config webpack.prod.config.js && npm run copy-files"
   },
   "repository": {
     "type": "git",
