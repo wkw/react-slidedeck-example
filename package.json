@@ -4,7 +4,9 @@
   "scripts": {
     "start": "node server.js",
     "clean": "rm -fr ./build",
-    "build": "npm run clean && webpack --config webpack.prod.config.js"
+    "build": "npm run clean && webpack --config webpack.prod.config.js",
+    "gh-pages": "cp -r ./build/* ./deck/",
+    "gh-pages:publish": "npm run gh-pages && git add . && git commit -m 'update deck' && git push origin gh-pages"
   },
   "repository": {
     "type": "git",
