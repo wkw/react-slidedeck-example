@@ -15,7 +15,10 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin({ multiStep: true }),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      'Promise': 'es6-promise'
+    }),
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']

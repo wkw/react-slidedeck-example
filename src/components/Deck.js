@@ -27,9 +27,11 @@ export default class Deck extends Component {
 
 
     return (
-      <div className='Deck'>
+      <div className='Deck' style={{fontSize: '4vw'}}>
         <div id='header'>
-          <Image width='40%' src={require('../slides/emn-logo.svg')} />
+          <a href="http://evolvingmedia.net/">
+            <Image width='40%' src={require('../slides/emn-logo.svg')} />
+          </a>
         </div>
         <div
           style={{

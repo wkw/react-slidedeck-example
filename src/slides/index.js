@@ -1,6 +1,17 @@
 import React from 'react';
 import Center from '../components/Center';
 import Image from '../components/Image';
+import QuoteMaker from '../components/QuoteMaker';
+import Quotes from '../components/Quotes';
+import hasTouchEvents from '../utils/hasTouchEvents';
+
+console.log(hasTouchEvents);
+
+function navigationHint () {
+  return hasTouchEvents() ?
+    'Touch sides of screen to navigate slides' :
+    'Use keyboard ← and → arrows to navigate.';
+}
 
 function makeProgression(props, title, items) {
   return [
@@ -26,6 +37,7 @@ export default function getSlides() {
   return [
     <Center wide title='Use keyboard ← and → arrows to navigate.'>
       <h2>EMN Builds Interactive Media</h2>
+      <span style={{fontSize: '1.1rem', color: '#d34b3e'}}>{ navigationHint() }</span>
     </Center>,
     <Center wide>
       <h2 style={{opacity: .5}}>EMN Builds Interactive Media</h2>
@@ -41,19 +53,14 @@ export default function getSlides() {
       'Sails & FeathersJS',
       'Laravel - PHP'
     ]),
-    <Center wide>
-      <img src={require('./npm.png')} width='100%' height='80%' />
-    </Center>,
-    <Center wide>
-      <img src={require('./npm.png')} width='100%' style={{ opacity: .25 }} />
-      <div style={{ position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, height: '100vh' }}>
-        <div style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'center' }}>
-          <h1 style={{ alignSelf: 'center' }}>3 Million</h1>
-        </div>
+    <Center wide alt>
+      <h3>This slide contains a Component!</h3>
+      <div style={{ fontSize: '1.4rem'}}>
+        This is a custom React component which fetches computer science quotes.
+        <br/>
+        Pretty cool huh?
       </div>
-    </Center>,
-    <Center>
-      <h2>Slide</h2>
+      <QuoteMaker data={Quotes} />
     </Center>,
     <div style={{
       width: '100vw',
@@ -72,7 +79,7 @@ export default function getSlides() {
         alignItems: 'center',
         justifyContent: 'center'
       }}>
-        <h2>Features</h2>
+        <h2>The Last Slide</h2>
       </div>
       <div style={{
         position: 'absolute',
@@ -86,7 +93,7 @@ export default function getSlides() {
         alignItems: 'center',
         justifyContent: 'center'
       }}>
-        <h2>Constraints</h2>
+        <h2>This is</h2>
       </div>
     </div>
   ];

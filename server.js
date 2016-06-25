@@ -6,7 +6,9 @@ new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
   historyApiFallback: true,
-  watchDelay: 0,
+  watchOptions: {
+    aggregateTimeout: 0
+  },
   stats: { colors: true }
 }).listen(3000, 'localhost', function (err, result) {
   if (err) {
