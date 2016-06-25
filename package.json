@@ -6,7 +6,7 @@
     "clean": "rm -fr ./build",
     "build": "npm run clean && webpack --config webpack.prod.config.js",
     "gh-pages": "cp -r ./build/* ./deck/",
-    "gh-pages:publish": "npm run gh-pages && git add . && git commit -m 'update deck' && git push origin gh-pages"
+    "gh-pages:publish": "npm run gh-pages && git add . && git commit -m 'update deck' && git push origin gh-pages && git status"
   },
   "repository": {
     "type": "git",
